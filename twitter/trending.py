@@ -12,8 +12,7 @@ def main():
                       consumer_secret='ZiAiVOOPBIqchkmR9peJODhdE7eUwIILctYrUZd29fp9rLNJkd',
                       access_token_key='886305095498911744-hD57g0GKEeY8A6gjHzWXfXmJlcVj9vW',
                       access_token_secret='r55evis3xY7kRLMsaDZe5OXkIIJsypGbbSz9H5pQfzZjS')
-    # sanity check to make sure it is working
-    print 'credentials:', api.VerifyCredentials()
+   
     # Gets worldwide trending topics. We can also specify a region (like USA or California or SF)
     trends = filter(lambda t: is_ascii(t.name), api.GetTrendsCurrent())
     
