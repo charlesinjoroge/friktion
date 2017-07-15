@@ -1,0 +1,6 @@
+import twitter
+
+def main():
+    print 'Hello, World'
+
+main()
