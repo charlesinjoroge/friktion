@@ -9,3 +9,4 @@ Any questions or design decisions that's important for all of us to know, we can
     - Ex. 50% worldwide, 50% USA or something like that 
   - The [topics we get](https://github.com/cnjoroge/friktion/pull/1) aren't always the best for fostering discussion, but hey, it's a start
 - Trying to figure out if we can filter out tweets related to certain topics...
+- Need to find a good way with dealing with non-ASCII characters
