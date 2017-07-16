@@ -521,3 +521,7 @@ select {
     border: 2px solid;
    border-radius: 25px;
 }
+
+#charles_text {
+  padding: 0;
+}

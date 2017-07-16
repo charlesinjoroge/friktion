@@ -1,0 +1,99 @@
+// Media Queries
+// 1. Name and define our breakpoints. Name the map something sensical
+// 2. Write a comma separated list of key: value, pairs that we will use later
+$breakpoints: (
+   small: 34em,
+	large: 60em,
+);
+
+// if selector is wider than the screensize we are calling
+@mixin bp($screen-size) {
+	// and if our map that we named $breakpoints includes values (we called them $screen-size)
+	@if map-has-key($breakpoints, $screen-size) {
+		// then write out a nested Media Query that will target that value as our min-width
+		@media (min-width: map-get($breakpoints, $screen-size)) {
+	  		// write CSS within this mixin that would apply to only this breakpoint or above
+				@content;
+		}
+	// if the screen-size we are requesting doesn't exist, then tell me when it is compiled
+	} @else {
+        // Debugging
+        @warn "'#{$screen-size}' has not been declared as a breakpoint.";
+    }
+}
+
+body:before {
+	content: 'Default, not within a media query';
+}
+
+// Display Breakpoint During Development on Front end
+@each $breakpoint, $screen-size in $breakpoints {	
+	@media screen and (min-width: '#{$screen-size}') {
+		body:before {
+			content: '@include bp(#{$breakpoint}) = min-width: #{$screen-size}';
+		}
+	}
+}
+
+$background-color: rgba(192, 72, 72, .75);
+
+// Could clean this up/automate it a little more but it was faster this way for now
+body:before {
+	background: $background-color;
+
+	@include bp(small) {
+		background: adjust-hue($background-color, -60%);
+	}
+
+	@include bp(large) {
+		background: adjust-hue($background-color, 150%);
+	}
+}
+
+body:after {
+	content: 'This browser does not support CSS Grid Layout.';
+	
+	@supports ( display: grid ) {
+		content: 'This browser supports CSS Grid Layout';
+	}
+}
+
+// For design sake
+
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300);
+
+body {
+	&:before {
+		bottom: 3rem;
+		left: 0;
+
+		@include bp(small) {
+			bottom: 0;
+		}
+	}
+
+	&:after {
+		background: adjust-hue($background-color, -180%);
+		bottom: 0;
+		right: 0;
+	}
+	
+	&:before,
+	&:after {
+		color: #333;
+		display: block;
+		font-family: 'Josefin Sans', sans-serif;
+		font-size: 1rem;
+		line-height: 1rem;
+		padding: 1rem 0;
+		position: fixed;
+		text-align: center;
+		width: 100%;
+		z-index: 100;
+		
+		@include bp(small) {
+			padding: 1rem;
+			width: auto;	
+		}
+	}
+}

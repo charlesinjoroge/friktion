@@ -1,0 +1,137 @@
+.content {
+	display: grid;
+	grid-gap: 20px;	
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	
+	@include bp(small) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	
+	@include bp(large) {
+		grid-template-columns: repeat(6, 1fr);
+		grid-template-rows: repeat(3, 70px);
+	}
+}
+
+	li:nth-of-type(1) {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	li:nth-of-type(2) {
+		@include bp(small) {
+			grid-column: 2;
+			grid-row: 1;
+		}
+		
+		@include bp(large) {
+			grid-row: 3;
+		}
+	}
+
+
+	li:nth-of-type(3) {
+		@include bp(small) {
+			grid-column: 3;
+			grid-row: 1;
+		}
+		
+		@include bp(large) {
+			grid-row: 2;
+		}
+	}
+
+	li:nth-of-type(4) {
+		@include bp(small) {
+			grid-column: 1;
+			grid-row: 2;
+		}
+		
+		@include bp(large) {
+			grid-column: 4;
+			grid-row: 1;
+		}
+	}
+
+	li:nth-of-type(5) {
+		@include bp(small) {
+			grid-column: 2;
+			grid-row: 2;
+		}
+		
+		@include bp(large) {
+			grid-column: 5;
+			grid-row: 3;
+		}
+	}
+	
+	li:nth-of-type(6) {
+		@include bp(small) {
+			grid-column: 3;
+			grid-row: 2;
+		}
+		
+		@include bp(large) {
+			grid-column: 6;
+			grid-row: 2;
+		}
+	}
+
+// Styles for fun
+// -------------------------------------------------
+@import 'https://fonts.googleapis.com/css?family=Maitree|Oswald:700|Open+Sans:300';
+
+body {
+	background: #fff;
+	color: #444;
+	font-family: Maitree, serif;
+	margin: 0 auto;
+}
+
+ol {
+   counter-reset: listNumbering;
+	list-style: none;
+	padding: 0 1rem;
+}
+
+li {
+   font-size: 1em;
+	counter-increment: listNumbering;
+}
+
+li:before {
+	content: counter(listNumbering, decimal);
+	display: block;
+	font-family: Oswald, sans-serif;
+	font-size: 7rem;
+	font-weight: 700;
+	text-align: center;
+}
+
+.summary {
+	color: orange;
+	border-top: 1px solid orange;
+	border-bottom: 1px solid orange;
+	font-family: "Open Sans", sans-serif;
+	font-size: .7rem;
+	font-weight: 300;
+	letter-spacing: 0.1rem;
+	padding: .5rem 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+a {
+	color: rgb(19, 56, 117);
+}
+	
+p {
+	font-size: 0.8rem;
+	line-height: 1.5;
+}
+
+div {
+	background: #fff;
+	padding: .5rem;	
+}

@@ -1,0 +1,87 @@
+html {
+  box-sizing: border-box;
+}
+
+*, :before, :after {
+  box-sizing: inherit;
+}
+
+html, body {
+  height: 100%;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+ul li {
+  width: 100%;
+  height: 100%;
+  float: left;
+  list-style: none;
+  position: relative;
+  display: inline-block;
+  text-indent: -999em;
+}
+@media (min-width: 600px) {
+  ul li {
+    height: 50%;
+  }
+  ul li.one-half {
+    width: 50%;
+  }
+  ul li.one-third {
+    width: 33.33%;
+  }
+}
+ul li:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: " ";
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+ul li:hover:after, ul li:focus:after {
+  background: transparent;
+}
+ul li:nth-child(1) {
+  background: url("https://pbs.twimg.com/profile_images/448968258884874241/zHJuwrrf.jpeg");
+  background-position: 50% 50%;
+  background-size: cover;
+}
+ul li:nth-child(2) {
+  background: url("https://voxpopulisphere.files.wordpress.com/2017/01/pablo-neruda.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+}
+ul li:nth-child(3) {
+  background: url("https://4.bp.blogspot.com/-u7D-w9k_9JU/UvIgwwcZ_RI/AAAAAAAADQ4/gTI_XoupFTk/s1600/Wangari-Maathai.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+}
+ul li:nth-child(4) {
+  background: url("https://www.biography.com/.image/t_share/MTE5NDg0MDU1MDA1MzMzMDA3/langston-hughes-9346313-1-402.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+}
+ul li:nth-child(5) {
+  background: url("http://www.ralphmag.org/HQ/sello-dukier640x350.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+}

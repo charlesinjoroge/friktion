@@ -1,0 +1,73 @@
+html { box-sizing: border-box; }
+*,:before,:after { box-sizing: inherit; }
+
+html, body { height: 100%; }
+
+$keyBreakpoint: 600px;
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@mixin bgSettings($url){
+  background: url($url);
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+ul {
+  margin: 0; 
+  padding: 0; 
+  height: 100%;
+  li { 
+    width: 100%; 
+    height: 100%;
+    float: left; 
+    list-style: none; 
+    position: relative;
+    display: inline-block;
+    text-indent: -999em;
+    
+    @media(min-width: $keyBreakpoint){
+      height: 50%;
+      &.one-half { width: 50%; }
+      &.one-third { width: 33.33%; }
+    }
+    
+    &:after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      content: " ";
+      background: rgba(0,0,0, .4);
+      transition: all .3s ease-in-out;
+    }
+    &:hover:after,&:focus:after {
+      background: rgba(0,0,0, 0);
+    }
+  }
+  li:nth-child(1){
+    @include bgSettings("https://s3-us-west-2.amazonaws.com/s.cdpn.io/15309/photo-1.jpg");
+  }
+  li:nth-child(2){
+    @include bgSettings("https://s3-us-west-2.amazonaws.com/s.cdpn.io/15309/photo-2.jpg");
+  }
+  li:nth-child(3){
+    @include bgSettings("https://s3-us-west-2.amazonaws.com/s.cdpn.io/15309/photo-3.jpg");
+  }
+  li:nth-child(4){
+    @include bgSettings("https://s3-us-west-2.amazonaws.com/s.cdpn.io/15309/photo-4.jpg");
+  }
+  li:nth-child(5){
+    @include bgSettings("https://s3-us-west-2.amazonaws.com/s.cdpn.io/15309/photo-5.jpg");
+  }
+}
