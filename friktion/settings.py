@@ -55,7 +55,7 @@ ROOT_URLCONF = 'friktion.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/Users/charlesnj/hackathon/friktion/feed/friktion',],
+        'DIRS': [os.path.join(BASE_DIR, 'feed/friktion'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
