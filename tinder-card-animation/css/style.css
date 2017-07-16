@@ -1,0 +1,106 @@
+.container {
+  width: 1300px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+#fake-tinder {
+  width: 300px;
+  height: 500px;
+  margin: 0 auto;
+  font-family: 'Varela Round', sans-serif;
+}
+#fake-tinder .header {
+  padding: 5px 10px;
+  border-bottom: solid 1px #f2f2f2;
+}
+#fake-tinder .header:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+#fake-tinder .header i {
+  color: #CDCDCD;
+  cursor: pointer;
+}
+#fake-tinder .header .fa-cog {
+  float: left;
+}
+#fake-tinder .header .fa-comments {
+  float: right;
+}
+#fake-tinder .cards {
+  width: 100%;
+}
+#fake-tinder .cards .card {
+  width: 290px;
+  overflow: hidden;
+  display: flex;
+  height: 350px;
+  margin: 7px auto;
+  border-radius: 7px;
+  border: solid 1px lightgray;
+  background: url(http://www.negropean.com/wp-content/uploads/2017/04/o-AFRICAN-AMERICAN-WOMAN-facebook.jpg) center no-repeat;
+  background-size: cover;
+}
+#fake-tinder .cards .card:not(.one) {
+  display: none;
+}
+#fake-tinder .cards .card.seven {
+  background: #fff;
+}
+#fake-tinder .cards .info {
+  background: #fff;
+  width: 100%;
+  align-self: flex-end;
+  padding: 15px;
+}
+#fake-tinder .cards .info h2 {
+  font-size: 20px;
+  margin: 0;
+}
+#fake-tinder .cards .info p {
+  margin: 0;
+  font-size: 13px;
+  color: gray;
+}
+#fake-tinder .buttons {
+  display: flex;
+  width: 245px;
+  margin: 12px auto;
+}
+#fake-tinder .buttons .button {
+  display: flex;
+  border: solid 9px #efefef;
+  border-radius: 40px;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 0;
+  margin: 0 -5px;
+}
+#fake-tinder .buttons .button.redo {
+  color: #FECD64;
+}
+#fake-tinder .buttons .button.no {
+  color: #FF6B6B;
+  font-size: 28px;
+  width: 60px;
+  height: 60px;
+}
+#fake-tinder .buttons .button.yes {
+  color: #4CCC93;
+  font-size: 28px;
+  width: 60px;
+  height: 60px;
+}
+#fake-tinder .buttons .button.star {
+  color: #2CB3C9;
+}
